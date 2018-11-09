@@ -134,9 +134,11 @@ RCT_EXPORT_METHOD(updateCategories:(NSArray *)json shouldRequestPermission:(BOOL
     self.categories = [NSSet setWithArray:categories];
   
     // Update the settings for these types
-    if ([[UIApplication sharedApplication] isRegisteredForRemoteNotifications] || shouldRequestPermission) {
-        [self registerNotificationSettings];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if ([[UIApplication sharedApplication] isRegisteredForRemoteNotifications] || shouldRequestPermission) {
+            [self registerNotificationSettings];
+        }
+    });
 }
 
 RCT_EXPORT_METHOD(callCompletionHandler)

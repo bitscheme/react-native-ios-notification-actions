@@ -49,6 +49,11 @@ RCT_EXPORT_MODULE();
     }
 }
 
++ (BOOL)requiresMainQueueSetup
+{
+    return FALSE;
+}
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];

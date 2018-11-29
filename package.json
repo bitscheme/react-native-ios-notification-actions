@@ -1,6 +1,6 @@
 {
   "name": "@bitscheme/react-native-ios-notification-actions",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Swipe + text input actions for ios push notifications",
   "main": "index.js",
   "directories": {
